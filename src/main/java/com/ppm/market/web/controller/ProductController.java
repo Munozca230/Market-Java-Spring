@@ -1,7 +1,6 @@
 package com.ppm.market.web.controller;
 
 import com.ppm.market.domain.Product;
-import com.ppm.market.domain.repository.ProductRepository;
 import com.ppm.market.domain.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -10,12 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/v1/products")
 public class ProductController {
     @Autowired
     private ProductService productService;
