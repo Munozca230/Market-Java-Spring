@@ -58,11 +58,13 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
+    //this uses parserBuilder and parse(token) in spring 3
     private Claims extractAllClaims(String token) {
-        return  Jwts.parserBuilder()
+        return (Claims) Jwts
+                .parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
-                .parseClaimsJwt(token)
+                .parse(token)
                 .getBody();
     }
 
